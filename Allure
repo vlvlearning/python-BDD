@@ -1,3 +1,11 @@
-1. Download allure Zip file
-2. common to execut -- behave -f allure_behave.formatter:AllureFormatter -o D:\path....\reports  features\first_selenium.feature"
-3. Generate the report -- allure generate --clean -o E:\path...\reports E:\path...\reports-JsonFiles
+1. Download allure Zip file and set the bin path in environment variable
+2. common to execut -- behave -f allure_behave.formatter:AllureFormatter -o allure/results ./features
+3. Generate the report -- allure generate allure/results/ -o allure/reports --clean
+4. Open the Report ---  allure open allure/reports
+
+///////////////////// Attached the failed screenshot //////////////////////////////////////////
+
+from allure_commons.types import AttachmentType
+allure.attach(driver.get_screenshot_as_png(), name="Screenshot", attachment_type=AttachmentType.PNG)
+
+////////////////////////////////////////////////////////////////////////////////////
